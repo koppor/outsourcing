@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.example.org/matching/partner/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="partner" targetNamespace="http://www.example.org/matching/partner/interface">
+    <plnk:partnerLinkType name="partnerPLT">
+        <plnk:role name="partner" portType="tns:partner"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/matching/partner/interface">
+      <xsd:element name="InitiateShippingProductionScheduling">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InitiateShippingProductionSchedulingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SendShippingSchedule">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SendShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvokeRequestShipping">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvokeRequestShippingResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingSchedule">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="InitiateShippingProductionSchedulingRequest">
+    <wsdl:part element="tns:InitiateShippingProductionScheduling" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InitiateShippingProductionSchedulingResponse">
+    <wsdl:part element="tns:InitiateShippingProductionSchedulingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SendShippingScheduleRequest">
+  	<wsdl:part name="parameters" element="tns:SendShippingSchedule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SendShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:SendShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvokeRequestShippingRequest">
+  	<wsdl:part name="parameters" element="tns:InvokeRequestShipping"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvokeRequestShippingResponse">
+  	<wsdl:part name="parameters" element="tns:InvokeRequestShippingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleRequest">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingSchedule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="partner">
+    <wsdl:operation name="InitiateShippingProductionScheduling">
+      <wsdl:input message="tns:InitiateShippingProductionSchedulingRequest"/>
+    </wsdl:operation>
+    <wsdl:operation name="SendShippingSchedule">
+    	<wsdl:input message="tns:SendShippingScheduleRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InvokeRequestShipping">
+    	<wsdl:input message="tns:InvokeRequestShippingRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="partnerSOAP" type="tns:partner">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InitiateShippingProductionScheduling">
+      <soap:operation soapAction="ns:matching/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="partner">
+    <wsdl:port binding="tns:partnerSOAP" name="partnerSOAP">
+      <soap:address location="ns:matching"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2 @@
+aggregate /bpel:process/bpel:sequence
+<bpel:receive xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" name="ObsReceive" partnerLink="observablePL" operation="op1" portType="obs:observableP" />

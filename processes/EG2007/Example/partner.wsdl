@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.example.org/matching/partner/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="partner" targetNamespace="http://www.example.org/matching/partner/interface">
+    <plnk:partnerLinkType name="partnerPLT">
+        <plnk:role name="partner" portType="tns:partner"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/matching/partner/interface">
+      <xsd:element name="PrepareOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InitiateShippingProductionSchedulingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceWatertankBody">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SendShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceMotor">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvokeRequestShippingResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingSchedule">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProducePump">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProducePumpResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleMotorpump">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleMotorpumpResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWatertank">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWatertankResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PrepareOrderRequest">
+    <wsdl:part element="tns:PrepareOrder" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InitiateShippingProductionSchedulingResponse">
+    <wsdl:part element="tns:InitiateShippingProductionSchedulingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ProduceWatertankBodyRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceWatertankBody"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SendShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:SendShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceMotorRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceMotor"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvokeRequestShippingResponse">
+  	<wsdl:part name="parameters" element="tns:InvokeRequestShippingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleRequest">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingSchedule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProducePumpRequest">
+  	<wsdl:part name="parameters" element="tns:ProducePump"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProducePumpResponse">
+  	<wsdl:part name="parameters" element="tns:ProducePumpResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleMotorpumpRequest">
+  	<wsdl:part name="parameters" element="tns:AssembleMotorpump"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleMotorpumpResponse">
+  	<wsdl:part name="parameters" element="tns:AssembleMotorpumpResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWatertankRequest">
+  	<wsdl:part name="parameters" element="tns:AssembleWatertank"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWatertankResponse">
+  	<wsdl:part name="parameters" element="tns:AssembleWatertankResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="partner">
+    <wsdl:operation name="PrepareOrder">
+      <wsdl:input message="tns:PrepareOrderRequest"/>
+    </wsdl:operation>
+    <wsdl:operation name="ProduceWatertankBody">
+    	<wsdl:input message="tns:ProduceWatertankBodyRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ProduceMotor">
+    	<wsdl:input message="tns:ProduceMotorRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ProducePump">
+    	<wsdl:input message="tns:ProducePumpRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AssembleMotorpump">
+    	<wsdl:input message="tns:AssembleMotorpumpRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AssembleWatertank">
+    	<wsdl:input message="tns:AssembleWatertankRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="partnerSOAP" type="tns:partner">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PrepareOrder">
+      <soap:operation soapAction="ns:matching/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="partner">
+    <wsdl:port binding="tns:partnerSOAP" name="partnerSOAP">
+      <soap:address location="ns:matching"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

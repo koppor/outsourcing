@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:p="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/matching/GSM" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" name="wsdlArtifacts" targetNamespace="http://www.example.org/matching/GSM">
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SERVICE DEFINITION - A service groups a set of ports into
+     a service unit.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <plnk:partnerLinkType name="functionalityPLT">
+    <plnk:role name="functionality" portType="tns:functionalityPT"/>
+  </plnk:partnerLinkType>
+  <plnk:partnerLinkType name="controlPLT">
+    <plnk:role name="controlled" portType="tns:controlPT"/>
+  </plnk:partnerLinkType>
+  <plnk:partnerLinkType name="providerInternalFunctionsPLT">
+    <plnk:role name="provider" portType="tns:providerInternalFunctionsPT"/>
+  </plnk:partnerLinkType>
+    <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/matching/GSM">
+	<xsd:element name="getGSM">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="getGSMResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="wrapEnvelope">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="wrapEnvelopeResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="scheduleRoute">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="scheduleRouteResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverRegular">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverRegularResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverSpecial">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverSpecialResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverExpress">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverExpressResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="handoverParcel">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="handoverParcelResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="way1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NewOperationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="way2">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="way2Response1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="testGSM">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="testGSMResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="testGSM">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="testGSMResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="determineTransportation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="determineTransportationResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="determineRoute">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="determineRouteResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="checkGSM">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="checkGSMResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverPriority">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="deliverPriorityResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+    </xsd:schema>
+  </types>
+    <types><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/matching/GSM">
+	<xsd:element name="configureGSM">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="configureGSMResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></types>
+    <message name="getGSMRequest">
+    	<part element="tns:getGSM" name="parameters"/>
+    </message>
+    <message name="getGSMResponse">
+    	<part element="tns:getGSMResponse" name="parameters"/>
+    </message>
+    <message name="wrapEnvelopeRequest">
+    	<part element="tns:wrapEnvelope" name="parameters"/>
+    </message>
+    <message name="wrapEnvelopeResponse">
+    	<part element="tns:wrapEnvelopeResponse" name="parameters"/>
+    </message>
+    <message name="scheduleRouteRequest">
+    	<part element="tns:scheduleRoute" name="parameters"/>
+    </message>
+    <message name="scheduleRouteResponse">
+    	<part element="tns:scheduleRouteResponse" name="parameters"/>
+    </message>
+    <message name="deliverRegularRequest">
+    	<part element="tns:deliverRegular" name="parameters"/>
+    </message>
+    <message name="deliverRegularResponse">
+    	<part element="tns:deliverRegularResponse" name="parameters"/>
+    </message>
+    <message name="deliverSpecialRequest">
+    	<part element="tns:deliverSpecial" name="parameters"/>
+    </message>
+    <message name="deliverSpecialResponse">
+    	<part element="tns:deliverSpecialResponse" name="parameters"/>
+    </message>
+    <message name="deliverExpressRequest">
+    	<part element="tns:deliverExpress" name="parameters"/>
+    </message>
+    <message name="deliverExpressResponse">
+    	<part element="tns:deliverExpressResponse" name="parameters"/>
+    </message>
+    <message name="handoverParcelRequest">
+    	<part element="tns:handoverParcel" name="parameters"/>
+    </message>
+    <message name="handoverParcelResponse">
+    	<part element="tns:handoverParcelResponse" name="parameters"/>
+    </message>
+    <message name="configureGSMRequest">
+    	<part name="parameters" element="tns:configureGSM"></part>
+    </message>
+    <message name="configureGSMResponse">
+    	<part name="parameters" element="tns:configureGSMResponse"></part>
+    </message>
+    <message name="way1Request">
+    	<part name="parameters" element="tns:way1"></part>
+    </message>
+    <message name="NewOperationResponse">
+    	<part name="parameters" element="tns:NewOperationResponse"></part>
+    </message>
+    <message name="way2Request">
+    	<part name="parameters" element="tns:way2"></part>
+    </message>
+    <message name="way2Response1">
+    	<part name="parameters" element="tns:way2Response1"></part>
+    </message>
+    <message name="testGSMRequest">
+    	<part name="parameters" element="tns:testGSM"></part>
+    </message>
+    <message name="testGSMResponse1">
+    	<part name="parameters" element="tns:testGSMResponse1"></part>
+    </message>
+    <message name="testGSMRequest">
+    	<part name="parameters" element="tns:testGSM"></part>
+    </message>
+    <message name="testGSMResponse1">
+    	<part name="parameters" element="tns:testGSMResponse1"></part>
+    </message>
+    <message name="determineTransportationRequest">
+    	<part name="parameters" element="tns:determineTransportation"></part>
+    </message>
+    <message name="determineTransportationResponse1">
+    	<part name="parameters" element="tns:determineTransportationResponse1"></part>
+    </message>
+    <message name="determineRouteRequest">
+    	<part name="parameters" element="tns:determineRoute"></part>
+    </message>
+    <message name="determineRouteResponse1">
+    	<part name="parameters" element="tns:determineRouteResponse1"></part>
+    </message>
+    <message name="checkGSMRequest">
+    	<part name="parameters" element="tns:checkGSM"></part>
+    </message>
+    <message name="checkGSMResponse1">
+    	<part name="parameters" element="tns:checkGSMResponse1"></part>
+    </message>
+    <message name="deliverPriorityRequest">
+    	<part name="parameters" element="tns:deliverPriority"></part>
+    </message>
+    <message name="deliverPriorityResponse1">
+    	<part name="parameters" element="tns:deliverPriorityResponse1"></part>
+    </message>
+    <portType name="functionalityPT">
+    	<operation name="getGSM">
+    		<input message="tns:getGSMRequest"/>
+
+    	</operation>
+    	<operation name="wrapEnvelope">
+    		<input message="tns:wrapEnvelopeRequest"/>
+
+    	</operation>
+    	<operation name="configureGSM">
+    		<input message="tns:configureGSMRequest"></input>
+
+    	</operation>
+    	<operation name="scheduleRoute">
+    		<input message="tns:scheduleRouteRequest"/>
+    		<output message="tns:scheduleRouteResponse"/>
+    	</operation>
+    	<operation name="deliverRegular">
+    		<input message="tns:deliverRegularRequest"/>
+
+    	</operation>
+    	<operation name="deliverSpecial">
+    		<input message="tns:deliverSpecialRequest"/>
+
+    	</operation>
+    	<operation name="deliverExpress">
+    		<input message="tns:deliverExpressRequest"/>
+
+    	</operation>
+    	<operation name="handoverParcel">
+    		<input message="tns:handoverParcelRequest"/>
+
+    	</operation>
+    	<operation name="testGSM">
+    		<input message="tns:testGSMRequest"></input>
+
+    	</operation>
+    	<operation name="determineTransportation">
+    		<input message="tns:determineTransportationRequest"></input>
+
+    	</operation>
+    	<operation name="determineRoute">
+    		<input message="tns:determineRouteRequest"></input>
+
+    	</operation>
+    	<operation name="checkGSM">
+    		<input message="tns:checkGSMRequest"></input>
+    	</operation>
+    	<operation name="deliverPriority">
+    		<input message="tns:deliverPriorityRequest"></input>
+    	</operation>
+    </portType>
+
+    <portType name="controlPT">
+    	<operation name="way1">
+    		<input message="tns:way1Request"></input>
+
+    	</operation>
+    	<operation name="way2">
+    		<input message="tns:way2Request"></input>
+
+    	</operation>
+    </portType>
+    <portType name="providerInternalFunctionsPT">
+    	<operation name="testGSM">
+    		<input message="tns:testGSMRequest"></input>
+
+    	</operation>
+    </portType>
+</definitions>

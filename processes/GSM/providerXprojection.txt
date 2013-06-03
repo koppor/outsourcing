@@ -1,0 +1,3 @@
+omit //bpel:invoke[@name="px:testGSM"]
+aggregate //bpel:sequence[@name="SEQ3"]
+<bpel:invoke xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/abstract" name="c:scheduleRoute" partnerLink="functionalityPL" operation="scheduleRoute" portType="tns:functionalityPt"></bpel:invoke>

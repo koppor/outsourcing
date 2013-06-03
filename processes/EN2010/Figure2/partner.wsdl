@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.example.com/matching/EDOC/Figure2/partner/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="partner" targetNamespace="http://www.example.com/matching/EDOC/Figure2/partner/interface">
+	<plnk:partnerLinkType name="partnerPLT">
+		<plnk:role name="partner" portType="tns:partner" />
+	</plnk:partnerLinkType>   
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.com/matching/EDOC/Figure2/partner/interface">
+      <xsd:element name="checkGSM">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InitiateShippingProductionSchedulingResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceWatertankBody">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SendShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceMotor">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InvokeRequestShippingResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingSchedule">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingScheduleResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProducePump">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProducePumpResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleMotorpump">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleMotorpumpResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWatertank">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWatertankResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="wrapUpParcel">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="wrapUpParcelResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="scheduleRoute">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="scheduleRouteResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverRegular">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverRegularResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverExpress">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverExpressResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="handOverParcel">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="handOverParcelResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGSM">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getGSMResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="determineTransportation">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="determineTransportationResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="wrapUpEnvelope">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="wrapUpEnvelopeResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="determineRoute">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="determineRouteResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverPriority">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deliverPriorityResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="checkGSMRequest">
+    <wsdl:part element="tns:checkGSM" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="InitiateShippingProductionSchedulingResponse">
+    <wsdl:part element="tns:InitiateShippingProductionSchedulingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ProduceWatertankBodyRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceWatertankBody"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SendShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:SendShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceMotorRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceMotor"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvokeRequestShippingResponse">
+  	<wsdl:part name="parameters" element="tns:InvokeRequestShippingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleRequest">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingSchedule"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleResponse">
+  	<wsdl:part name="parameters" element="tns:ReceiveShippingScheduleResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProducePumpRequest">
+  	<wsdl:part name="parameters" element="tns:ProducePump"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProducePumpResponse">
+  	<wsdl:part name="parameters" element="tns:ProducePumpResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleMotorpumpRequest">
+  	<wsdl:part name="parameters" element="tns:AssembleMotorpump"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleMotorpumpResponse">
+  	<wsdl:part name="parameters" element="tns:AssembleMotorpumpResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWatertankRequest">
+  	<wsdl:part name="parameters" element="tns:AssembleWatertank"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWatertankResponse">
+  	<wsdl:part name="parameters" element="tns:AssembleWatertankResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapUpParcelRequest">
+  	<wsdl:part name="parameters" element="tns:wrapUpParcel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapUpParcelResponse">
+  	<wsdl:part name="parameters" element="tns:wrapUpParcelResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="scheduleRouteRequest">
+  	<wsdl:part name="parameters" element="tns:scheduleRoute"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="scheduleRouteResponse">
+  	<wsdl:part name="parameters" element="tns:scheduleRouteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverRegularRequest">
+  	<wsdl:part name="parameters" element="tns:deliverRegular"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverRegularResponse">
+  	<wsdl:part name="parameters" element="tns:deliverRegularResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverExpressRequest">
+  	<wsdl:part name="parameters" element="tns:deliverExpress"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverExpressResponse">
+  	<wsdl:part name="parameters" element="tns:deliverExpressResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="handOverParcelRequest">
+  	<wsdl:part name="parameters" element="tns:handOverParcel"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="handOverParcelResponse">
+  	<wsdl:part name="parameters" element="tns:handOverParcelResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGSMRequest">
+  	<wsdl:part name="parameters" element="tns:getGSM"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getGSMResponse">
+  	<wsdl:part name="parameters" element="tns:getGSMResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="determineTransportationRequest">
+  	<wsdl:part name="parameters" element="tns:determineTransportation"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="determineTransportationResponse">
+  	<wsdl:part name="parameters" element="tns:determineTransportationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapUpEnvelopeRequest">
+  	<wsdl:part name="parameters" element="tns:wrapUpEnvelope"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="wrapUpEnvelopeResponse">
+  	<wsdl:part name="parameters" element="tns:wrapUpEnvelopeResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="determineRouteRequest">
+  	<wsdl:part name="parameters" element="tns:determineRoute"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="determineRouteResponse">
+  	<wsdl:part name="parameters" element="tns:determineRouteResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverPriorityRequest">
+  	<wsdl:part name="parameters" element="tns:deliverPriority"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deliverPriorityResponse">
+  	<wsdl:part name="parameters" element="tns:deliverPriorityResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationRequest">
+  	<wsdl:part name="parameters" element="tns:NewOperation"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationResponse">
+  	<wsdl:part name="parameters" element="tns:NewOperationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="partner">
+    <wsdl:operation name="checkGSM">
+      <wsdl:input message="tns:checkGSMRequest"/>    </wsdl:operation>
+    <wsdl:operation name="deliverExpress">
+    	<wsdl:input message="tns:deliverExpressRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deliverPriority">
+    	<wsdl:input message="tns:deliverPriorityRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="deliverRegular">
+    	<wsdl:input message="tns:deliverRegularRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="determineRoute">
+    	<wsdl:input message="tns:determineRouteRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="determineTransportation">
+    	<wsdl:input message="tns:determineTransportationRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getGSM">
+    	<wsdl:input message="tns:getGSMRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="handOverParcel">
+    	<wsdl:input message="tns:handOverParcelRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="scheduleRoute">
+    	<wsdl:input message="tns:scheduleRouteRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="wrapUpEnvelope">
+    	<wsdl:input message="tns:wrapUpEnvelopeRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="wrapUpParcel">
+    	<wsdl:input message="tns:wrapUpParcelRequest"></wsdl:input>    </wsdl:operation>
+  </wsdl:portType>
+
+    <wsdl:binding name="partnerSOAP" type="tns:partner">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkGSM">
+      <soap:operation soapAction="ns:matching/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="partner">
+    <wsdl:port binding="tns:partnerSOAP" name="partnerSOAP">
+      <soap:address location="ns:matching"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test of Outsourcing Application
+Bundle-SymbolicName: outsourcing.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.junit;bundle-version="[4.0.0,5.0.0)",
+ outsourcing;bundle-version="1.0.0",
+ org.eclipse.emf.common

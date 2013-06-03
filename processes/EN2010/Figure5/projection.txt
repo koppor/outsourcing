@@ -1,0 +1,3 @@
+omit //bpel:receive[@name="oWp"]
+omit //bpel:sequence[@name="SEQ1"] 
+omit //bpel:invoke[@name="pB"]

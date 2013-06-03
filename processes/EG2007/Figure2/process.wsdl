@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.example.org/matching/process/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="process" targetNamespace="http://www.example.org/matching/process/interface">
+    <plnk:partnerLinkType name="processPLT">
+        <plnk:role name="process" portType="tns:process"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/matching/process/interface">
+      <xsd:element name="ReceiveShippingSchedule">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReceiveShippingScheduleResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ReceiveShippingScheduleRequest">
+    <wsdl:part element="tns:ReceiveShippingSchedule" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ReceiveShippingScheduleResponse">
+    <wsdl:part element="tns:ReceiveShippingScheduleResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="process">
+    <wsdl:operation name="ReceiveShippingSchedule">
+      <wsdl:input message="tns:ReceiveShippingScheduleRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="processSOAP" type="tns:process">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ReceiveShippingSchedule">
+      <soap:operation soapAction="http://www.example.org/matching/process/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="process">
+    <wsdl:port binding="tns:processSOAP" name="processSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

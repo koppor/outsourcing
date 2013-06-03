@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/CrossWork/WaterTankProduction/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WaterTankProduction" targetNamespace="http://www.example.org/CrossWork/WaterTankProduction/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+    <plnk:partnerLinkType name="WaterTankProductionPLT">
+    <plnk:role name="producer" portType="tns:WaterTankProductionPT"/>
+  </plnk:partnerLinkType>
+
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/WaterTankProduction/">
+      <xsd:element name="PrepareOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PrepareOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceSealingRing">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceSealingRingResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceGrommet">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceGrommetResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceDispenser">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceDispenserResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceWaterTankBody">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProduceWaterTankBodyResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWaterTank">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AssembleWaterTankResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PrepareOrderRequest">
+    <wsdl:part element="tns:PrepareOrder" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="PrepareOrderResponse">
+    <wsdl:part element="tns:PrepareOrderResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ProduceSealingRingRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceSealingRing"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceSealingRingResponse">
+  	<wsdl:part name="parameters" element="tns:ProduceSealingRingResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceGrommetRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceGrommet"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceGrommetResponse">
+  	<wsdl:part name="parameters" element="tns:ProduceGrommetResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceDispenserRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceDispenser"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceDispenserResponse">
+  	<wsdl:part name="parameters" element="tns:ProduceDispenserResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceWaterTankBodyRequest">
+  	<wsdl:part name="parameters" element="tns:ProduceWaterTankBody"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProduceWaterTankBodyResponse">
+  	<wsdl:part name="parameters" element="tns:ProduceWaterTankBodyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWaterTankRequest">
+  	<wsdl:part name="parameters" element="tns:AssembleWaterTank"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AssembleWaterTankResponse">
+  	<wsdl:part name="parameters" element="tns:AssembleWaterTankResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WaterTankProductionPT">
+    <wsdl:operation name="PrepareOrder">
+      <wsdl:input message="tns:PrepareOrderRequest"/>
+
+    </wsdl:operation>
+    <wsdl:operation name="ProduceSealingRing">
+    	<wsdl:input message="tns:ProduceSealingRingRequest"></wsdl:input>
+
+    </wsdl:operation>
+    <wsdl:operation name="ProduceGrommet">
+    	<wsdl:input message="tns:ProduceGrommetRequest"></wsdl:input>
+
+    </wsdl:operation>
+    <wsdl:operation name="ProduceDispenser">
+    	<wsdl:input message="tns:ProduceDispenserRequest"></wsdl:input>
+
+    </wsdl:operation>
+    <wsdl:operation name="ProduceWaterTankBody">
+    	<wsdl:input message="tns:ProduceWaterTankBodyRequest"></wsdl:input>
+
+    </wsdl:operation>
+    <wsdl:operation name="AssembleWaterTank">
+    	<wsdl:input message="tns:AssembleWaterTankRequest"></wsdl:input>
+
+    </wsdl:operation>
+  </wsdl:portType>
+
+
+</wsdl:definitions>

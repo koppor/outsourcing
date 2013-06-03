@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/matching/invokableP/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="invokableP" targetNamespace="http://www.example.org/matching/invokableP/">
+    <plnk:partnerLinkType name="invokablePLT" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+        <plnk:role name="process" portType="tns:invokableP"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/matching/invokableP/">
+      <xsd:element name="op1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="op1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="op1Request">
+    <wsdl:part element="tns:op1" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="op1Response">
+    <wsdl:part element="tns:op1Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="invokableP">
+    <wsdl:operation name="op1">
+      <wsdl:input message="tns:op1Request"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="invokablePSOAP" type="tns:invokableP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="op1">
+      <soap:operation soapAction="http://www.example.org/matching/invokableP/op1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="invokableP">
+    <wsdl:port binding="tns:invokablePSOAP" name="invokablePSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

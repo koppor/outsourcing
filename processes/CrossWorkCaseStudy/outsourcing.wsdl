@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://www.cs.helsinki.fi/u/anorta/research/eSourcing/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="outourcing" targetNamespace="http://www.cs.helsinki.fi/u/anorta/research/eSourcing/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+	<plnk:partnerLinkType name="outsourcingPLT">
+		<plnk:role name="provider" portType="tns:ProviderPT" />
+		<plnk:role name="consumer" portType="tns:ConsumerPT" />
+	</plnk:partnerLinkType>
+    <wsdl:types><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/outourcing/">
+	<xsd:element name="startSourcing">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NewOperationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="endSourcing">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NewOperationResponse1">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema></wsdl:types>
+    <wsdl:message name="startSourcingRequest">
+		<wsdl:part name="parameters" element="tns:startSourcing"></wsdl:part>
+	</wsdl:message>
+    <wsdl:message name="NewOperationResponse">
+    	<wsdl:part name="parameters" element="tns:NewOperationResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="endSourcingRequest">
+    	<wsdl:part name="parameters" element="tns:endSourcing"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="NewOperationResponse1">
+    	<wsdl:part name="parameters" element="tns:NewOperationResponse1"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="ProviderPT">
+    	<wsdl:operation name="startSourcing">
+    		<wsdl:input message="tns:startSourcingRequest"></wsdl:input>
+
+    	</wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="ConsumerPT">
+    	<wsdl:operation name="endSourcing">
+    		<wsdl:input message="tns:endSourcingRequest"></wsdl:input>
+
+    	</wsdl:operation>
+    </wsdl:portType></wsdl:definitions>

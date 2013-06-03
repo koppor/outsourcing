@@ -1,0 +1,2 @@
+omit //bpel:receive[@name="ObsReceive"]
+hide //bpel:receive[@name="InvReceive"]

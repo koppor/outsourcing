@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.com/matching/EDOC/Figure5/partner/interface" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="partner" targetNamespace="http://www.example.com/matching/EDOC/Figure5/partner/interface">
+    <plnk:partnerLinkType name="partnerPLT" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+        <plnk:role name="partner" portType="tns:partner"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.com/matching/EDOC/Figure5/partner/interface">
+      <xsd:element name="prepareSpecification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="prepareSpecificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="preparePayment">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="preparePaymentResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="produceTank">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="produceTankResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="producePump">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="producePumpResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="payBill">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="payBillResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="prepareSpecificationRequest">
+    <wsdl:part element="tns:prepareSpecification" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="prepareSpecificationResponse">
+    <wsdl:part element="tns:prepareSpecificationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="preparePaymentRequest">
+  	<wsdl:part name="parameters" element="tns:preparePayment"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="preparePaymentResponse">
+  	<wsdl:part name="parameters" element="tns:preparePaymentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="produceTankRequest">
+  	<wsdl:part name="parameters" element="tns:produceTank"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="produceTankResponse">
+  	<wsdl:part name="parameters" element="tns:produceTankResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="producePumpRequest">
+  	<wsdl:part name="parameters" element="tns:producePump"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="producePumpResponse">
+  	<wsdl:part name="parameters" element="tns:producePumpResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="payBillRequest">
+  	<wsdl:part name="parameters" element="tns:payBill"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="payBillResponse">
+  	<wsdl:part name="parameters" element="tns:payBillResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="partner">
+    <wsdl:operation name="prepareSpecification">
+      <wsdl:input message="tns:prepareSpecificationRequest"/>
+    </wsdl:operation>
+    <wsdl:operation name="preparePayment">
+    	<wsdl:input message="tns:preparePaymentRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="produceTank">
+    	<wsdl:input message="tns:produceTankRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="producePump">
+    	<wsdl:input message="tns:producePumpRequest"></wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="payBill">
+    	<wsdl:input message="tns:payBillRequest"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="partnerSOAP" type="tns:partner">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="prepareSpecification">
+      <soap:operation soapAction="http://www.example.com/matching/EDOC/Figure5/partner/interface/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="partner">
+    <wsdl:port binding="tns:partnerSOAP" name="partnerSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="outsourcingApp"
+         point="org.eclipse.core.runtime.applications">
+       <application>
+         <run class="outsourcing.Application" />
+       </application>  
+   </extension>
+   <extension
+         id="product"
+         name="Matching Product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="matching.application.matchingApp"
+            name="Matching Product">
+         <property
+               name="appName"
+               value="Matching Product">
+         </property>
+      </product>
+   </extension>
+</plugin>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:tns="http://www.example.org/matching/process/interface"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="process" targetNamespace="http://www.example.org/matching/process/interface">
+	<plnk:partnerLinkType name="processPLT">
+		<plnk:role name="process" portType="tns:process" />
+	</plnk:partnerLinkType>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.example.org/matching/process/interface">
+			<xsd:element name="ReceiveOrder">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="in" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReceiveShippingScheduleResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="out" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReceivePaymentRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReceivePaymentRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReceiveAddOrderRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ReceiveAddOrderRequestResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="out" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="ReceiveOrderRequest">
+		<wsdl:part element="tns:ReceiveOrder" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ReceiveShippingScheduleResponse">
+		<wsdl:part element="tns:ReceiveShippingScheduleResponse"
+			name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="ReceivePaymentRequestRequest">
+		<wsdl:part name="parameters" element="tns:ReceivePaymentRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ReceivePaymentRequestResponse">
+		<wsdl:part name="parameters" element="tns:ReceivePaymentRequestResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ReceiveAddOrderRequestRequest">
+		<wsdl:part name="parameters" element="tns:ReceiveAddOrderRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ReceiveAddOrderRequestResponse">
+		<wsdl:part name="parameters" element="tns:ReceiveAddOrderRequestResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="process">
+		<wsdl:operation name="ReceiveOrder">
+			<wsdl:input message="tns:ReceiveOrderRequest" />
+		</wsdl:operation>
+		<wsdl:operation name="ReceivePaymentRequest">
+			<wsdl:input message="tns:ReceivePaymentRequestRequest"></wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="ReceiveAddOrderRequest">
+			<wsdl:input message="tns:ReceiveAddOrderRequestRequest"></wsdl:input>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="processSOAP" type="tns:process">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="ReceiveOrder">
+			<soap:operation
+				soapAction="http://www.example.org/matching/process/NewOperation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="process">
+		<wsdl:port binding="tns:processSOAP" name="processSOAP">
+			<soap:address location="http://www.example.org/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,78 @@
+This file contains notes on the implementation and some documentation.
+
+== Process Modeling ==
+Each activity may be additionally labeled using the status attribute
+e.g. xmlns:m="http://www.cs.helsinki.fi/u/anorta/research/eSourcing/" m:status="customerChoice"
+status may be: invokable, observable, EXOR, IXOR
+
+<bpel:extensions>
+<bpel:extension namespace="http://www.cs.helsinki.fi/u/anorta/research/eSourcing/" mustUnderstand="yes" />
+</bpel:extensions>
+
+
+== Implementation Notes ==
+
+Assumptions:
+(all following the paper)
+hiding: complete branch
+omission: complete branch
+aggregation: complete branch + new node
+
+The paper requires a pointer to the nodes working on.
+Following the assumptions, only the root node has to be given by the user
+
+1. How to identify a node?
+2. How to specify the new node?
+3. How to specify the operation?
+
+
+= 1. How to identify a node? =
+(called <nodespec> in point 3)
+Choice: Programmatically or via external command file
+
+Programmatically: The references and the new activity have to be given by the user
+
+External command file:
+ A* XPath to the Node: The DOM Element of a BPEL object can be retreived by "getElement()"
+   * chosen alternative
+ B* Alternative: IDs or names - as done in BPEL4Chor. But this requires an additional modification of the BPEL process definition. Using XPath is a superset of that!
+   * !! An onMessage branch cannot be replaced due to limitations of the used Eclipse BPEL implementation. Hoping that "onMessage" of pick is never used! If it will be used, we have to implement the BPEL4Chor hack
+
+
+= 2. How to specify the new node? =
+Plain BPEL activity
+Assumptions:
+used partnerLink and variable already declared
+Possible extension: use BPEL fragments as defined by Görlach et al. and implement a merge operation
+
+
+= 3. How to specify the operation? =
+a) Textfile
+hide <nodespec>
+
+ommit <nodespec>
+
+aggregate <nodespec> to
+<BPEL activity>
+
+Implementation:
+A:
+Parse file
+-Evaluate XPath on BPEL
+-Create HashMap DOM-Node -> XPath's operation
+-At DFS: check HashMap for DOM-Node. If match -> exec operation
+
+B: (not implemented)
+Parse file and store the two strings (name, new activity)
+At DFS: if name match: create activity at the specific place and insert it.
+
+
+b) Java-Code
+The result of the textfile has to be constructed by the user
+
+
+== Currently missing functionality ==
+ * No consistency check of the projection, e.g.,
+   * observable/invokable property not checked
+   * parent node of the root of the set not checked
+   * completeness of the set not checked (following the arguments of your email: we assume that all child nodes should also be hidden)

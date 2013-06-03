@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/matching/choiceP/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="choiceP" targetNamespace="http://www.example.org/matching/choiceP/">
+    <plnk:partnerLinkType name="choicePLT" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+        <plnk:role name="process" portType="tns:choiceP"/>
+    </plnk:partnerLinkType>   
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/matching/choiceP/">
+      <xsd:element name="choice1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="op1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="choice2">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="choice2Response">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="choice1Request">
+    <wsdl:part element="tns:choice1" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="op1Response">
+    <wsdl:part element="tns:op1Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="choice2Request">
+  	<wsdl:part name="parameters" element="tns:choice2"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="choice2Response">
+  	<wsdl:part name="parameters" element="tns:choice2Response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="choiceP">
+    <wsdl:operation name="choice1">
+      <wsdl:input message="tns:choice1Request"/>
+    </wsdl:operation>
+    <wsdl:operation name="choice2">
+    	<wsdl:input message="tns:choice2Request"></wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="choicePSOAP" type="tns:choiceP">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="choice1">
+      <soap:operation soapAction="http://www.example.org/matching/choiceP/choice1"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="choiceP">
+    <wsdl:port binding="tns:choicePSOAP" name="choicePSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
