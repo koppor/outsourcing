@@ -1,6 +1,8 @@
+# Source Outsourcing with Process Views
+
 This repository contains the implementation of the paper
-"Source Outsourcing with Process Views"
-by Rik Eshuis, Alex Norta, Oliver Kopp and Esa Pitkänen.
+"[Source Outsourcing with Process Views](http://doi.ieeecomputersociety.org/10.1109/TSC.2013.51)"
+by [Rik Eshuis](http://orcid.org/0000-0003-2314-7155), [Alex Norta](https://www.researchgate.net/profile/Alex_Norta), [Oliver Kopp](http://orcid.org/0000-0001-6962-4290) and [Esa Pitkänen](http://orcid.org/0000-0002-9818-6370).
 
 ## Repository organization
 
@@ -29,6 +31,7 @@ Download [Eclipse IDE for Java EE Developers](http://www.eclipse.org/downloads/p
 This is currently not required. We checked in the libraries in the version control as [git-annex](http://git-annex.branchable.com/) currently [has problems with web sources](http://git-annex.branchable.com/bugs/__34__fatal:_bad_config_file__34__/).
 
 ### Import project into Eclipse workspace
+
 1. Import projects `matching`, `matching application`, and `processes` via Import / Existing Projects into Workspace
 
 ### Fetch Eclipse BPEL Designer Model
@@ -51,6 +54,7 @@ This is currently not required. We checked in the libraries in the version contr
 12. Finish
 
 ### Fetch BPEL model utilities
+
 1. Right click on empty space in Package Explorer
 1. Import...
 1. Git/Projects from Git
@@ -97,7 +101,10 @@ This is currently not required. We checked in the libraries in the version contr
 
 ## License
 
+SPDX: `(Apache-2.0 AND GPL-3.0+)`
+
 This work is licensed under the Apache License 2.0.
-Currently, this work is *additionally* covered by the GNU Public License Version 3.0. As soon as the class `com.jopdesign.wcet.graphutils.Dominators<V, E>` is replaced by a non-GPL version, the license of is Apache 2.0 only.
+Currently, this work is *additionally* covered by the GNU Public License Version 3.0.
+As soon as the class [`com.jopdesign.wcet.graphutils.Dominators<V, E>`](https://github.com/koppor/outsourcing/blob/master/outsourcing/src/com/jopdesign/wcet/graphutils/Dominators.java) is replaced by a non-GPL version, the license of is Apache 2.0 only.
 
 This work includes `org.eclipse.ui.internal.ide.misc.DisjointSet<Element>`, which is licensed under the [Eclipse Public License v1.0](http://www.eclipse.org/legal/epl-v10.html).
